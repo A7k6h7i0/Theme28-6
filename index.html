@@ -535,8 +535,8 @@
     .stat-item:hover::after { opacity: 1; }
     .stat-item:hover { background: #222; }
     .stat-icon {
-      font-size: 1.8rem; color: rgba(201,169,110,.3);
-      display: block; margin-bottom: .8rem;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: .8rem; color: rgba(201,169,110,.45);
     }
     .stat-number {
       font-family: 'Playfair Display', serif;
@@ -610,10 +610,7 @@
     }
     .prop-location {
       font-size: .78rem; color: var(--text-light);
-      display: flex; align-items: center; gap: 5px;
-    }
-    .prop-location::before {
-      content: '📍'; font-size: .65rem;
+      display: flex; align-items: center; gap: 6px;
     }
     .prop-features {
       padding: 15px 24px;
@@ -624,7 +621,7 @@
       display: flex; align-items: center; gap: 6px;
       font-size: .75rem; color: var(--text-light);
     }
-    .prop-feat-icon { color: var(--gold); font-size: .85rem; }
+    .prop-feat-icon { display: inline-flex; align-items: center; color: var(--gold); }
     .prop-footer {
       padding: 16px 24px;
       display: flex; align-items: center; justify-content: space-between;
@@ -690,7 +687,7 @@
       background: rgba(201,169,110,.08);
       border: 1px solid rgba(201,169,110,.3);
       display: flex; align-items: center; justify-content: center;
-      color: var(--gold); font-size: 1.3rem;
+      color: var(--gold);
     }
     .why-feat-content h4 { font-size: .92rem; color: var(--dark); margin-bottom: .3rem; font-weight: 600; }
     .why-feat-content p  { font-size: .8rem; color: var(--text-light); line-height: 1.7; }
@@ -740,7 +737,7 @@
       font-size: 7rem; color: var(--gold); opacity: .12;
       position: absolute; top: 10px; left: 30px; line-height: 1;
     }
-    .test-stars { color: var(--gold); font-size: .78rem; letter-spacing: 3px; margin-bottom: 1.2rem; display: block; }
+    .test-stars { display: flex; gap: 4px; align-items: center; margin-bottom: 1.2rem; }
     .test-text {
       font-size: .88rem; color: var(--text-light);
       line-height: 1.85; margin-bottom: 1.6rem; font-style: italic;
@@ -912,7 +909,7 @@
       transition: var(--transition);
     }
     .value-card:hover { background: #222; transform: translateY(-6px); }
-    .value-icon { font-size: 2.2rem; color: var(--gold); display: block; margin-bottom: 1.2rem; }
+    .value-icon { display: flex; justify-content: center; color: var(--gold); margin-bottom: 1.2rem; }
     .value-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--white); margin-bottom: .9rem; }
     .value-text { font-size: .82rem; color: rgba(255,255,255,.45); line-height: 1.8; }
 
@@ -1008,7 +1005,7 @@
       font-size: 4.5rem; color: rgba(201,169,110,.1); line-height: 1;
       margin-bottom: .8rem; display: block;
     }
-    .service-icon { font-size: 2rem; color: var(--gold); margin-bottom: 1.2rem; display: block; }
+    .service-icon { display: flex; justify-content: center; color: var(--gold); margin-bottom: 1.2rem; }
     .service-title { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--dark); margin-bottom: 1rem; }
     .service-text { font-size: .86rem; color: var(--text-light); line-height: 1.85; margin-bottom: 1.5rem; }
     .service-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
@@ -1206,6 +1203,55 @@
     .mt-50 { margin-top: 50px; }
     .mt-60 { margin-top: 60px; }
 
+    /* ─── SVG Icons ─── */
+    .icon {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.75;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+    .icon-filled { fill: currentColor; stroke: none; }
+    .icon-xs { width: 13px; height: 13px; }
+    .icon-sm { width: 16px; height: 16px; }
+    .icon-md { width: 22px; height: 22px; }
+    .icon-lg { width: 32px; height: 32px; }
+    .icon-xl { width: 36px; height: 36px; }
+    .stat-icon {
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: .8rem; color: rgba(201,169,110,.45);
+    }
+    .stat-icon .icon { width: 36px; height: 36px; }
+    .prop-location { gap: 6px; }
+    .prop-location .icon { width: 13px; height: 13px; color: var(--gold); }
+    .prop-feat-icon {
+      display: inline-flex; align-items: center; color: var(--gold);
+    }
+    .prop-feat-icon .icon { width: 15px; height: 15px; }
+    .prop-action-btn .icon { width: 16px; height: 16px; }
+    .why-feat-icon {
+      display: flex; align-items: center; justify-content: center;
+    }
+    .why-feat-icon .icon { width: 22px; height: 22px; color: var(--gold); }
+    .value-icon, .service-icon {
+      display: flex; justify-content: center; color: var(--gold);
+    }
+    .value-icon .icon, .service-icon .icon { width: 32px; height: 32px; }
+    .contact-item-icon {
+      display: flex; align-items: center; justify-content: center;
+    }
+    .contact-item-icon .icon { width: 20px; height: 20px; color: var(--gold); }
+    .test-stars {
+      display: flex; gap: 4px; align-items: center; margin-bottom: 1.2rem;
+    }
+    .test-stars .icon { width: 14px; height: 14px; color: var(--gold); fill: var(--gold); stroke: none; }
+    .map-pin .icon { width: 18px; height: 18px; flex-shrink: 0; }
+
     /* ─── Responsive ─── */
 
     /* Touch devices — disable custom cursor & hover-only UI */
@@ -1394,6 +1440,31 @@
 </head>
 <body>
 
+  <!-- SVG Icon Sprite -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="icon-home" viewBox="0 0 24 24"><path d="M3 10.5L12 3l9 7.5"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></symbol>
+    <symbol id="icon-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+    <symbol id="icon-star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
+    <symbol id="icon-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="icon-bed" viewBox="0 0 24 24"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></symbol>
+    <symbol id="icon-bath" viewBox="0 0 24 24"><path d="M4 12h16a1 1 0 0 1 1 1v3a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4v-3a1 1 0 0 1 1-1z"/><path d="M6 12V5a2 2 0 0 1 2-2h3v2.25"/><path d="M4 21v-1"/></symbol>
+    <symbol id="icon-area" viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M9 21H3v-6"/><path d="M21 3l-7 7"/><path d="M3 21l7-7"/></symbol>
+    <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M12 21s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="icon-trophy" viewBox="0 0 24 24"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M5 5H3v1a3 3 0 0 0 3 3"/><path d="M19 5h2v1a3 3 0 0 1-3 3"/></symbol>
+    <symbol id="icon-key" viewBox="0 0 24 24"><circle cx="8" cy="8" r="4"/><path d="M12 8h9"/><path d="M18 8v3"/><path d="M21 8v3"/></symbol>
+    <symbol id="icon-diamond" viewBox="0 0 24 24"><path d="M6 3h12l4 7-10 11L2 10z"/><path d="M2 10h20"/><path d="M12 21L6 3"/><path d="M12 21l6-18"/></symbol>
+    <symbol id="icon-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.5 5.5L19 10l-5.5 1.5L12 17l-1.5-5.5L5 10l5.5-1.5z"/><path d="M19 15l.75 2.25L22 18l-2.25.75L19 21l-.75-2.25L16 18l2.25-.75z"/></symbol>
+    <symbol id="icon-clipboard" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></symbol>
+    <symbol id="icon-trending" viewBox="0 0 24 24"><path d="M22 7l-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></symbol>
+    <symbol id="icon-palette" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="8" cy="10" r="1.5" fill="currentColor" stroke="none"/><circle cx="12" cy="7" r="1.5" fill="currentColor" stroke="none"/><circle cx="16" cy="10" r="1.5" fill="currentColor" stroke="none"/><path d="M12 22a10 10 0 0 1-2.5-6.5c1.5.5 3-.5 3.5-2 .5 1.5 2 2.5 3.5 2A10 10 0 0 1 12 22z"/></symbol>
+    <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></symbol>
+    <symbol id="icon-compare" viewBox="0 0 24 24"><path d="M16 3h5v5"/><path d="M8 21H3v-5"/><path d="M21 3l-7 7"/><path d="M3 21l7-7"/></symbol>
+    <symbol id="icon-view360" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+  </svg>
+
   <!-- Loader -->
   <div class="loader" id="loader">
     <div class="loader-logo">Prestige <span>Estates</span></div>
@@ -1553,22 +1624,22 @@
     <section class="stats-section">
       <div class="stats-grid">
         <div class="stat-item reveal from-scale stagger-1">
-          <span class="stat-icon">🏡</span>
+          <span class="stat-icon"><svg class="icon icon-xl" aria-hidden="true"><use href="#icon-home"/></svg></span>
           <span class="stat-number" data-target="1200">0</span>
           <span class="stat-label">Properties Sold</span>
         </div>
         <div class="stat-item reveal from-scale stagger-2">
-          <span class="stat-icon">🌍</span>
+          <span class="stat-icon"><svg class="icon icon-xl" aria-hidden="true"><use href="#icon-globe"/></svg></span>
           <span class="stat-number" data-target="48">0</span>
           <span class="stat-label">Global Markets</span>
         </div>
         <div class="stat-item reveal from-scale stagger-3">
-          <span class="stat-icon">⭐</span>
+          <span class="stat-icon"><svg class="icon icon-xl" aria-hidden="true"><use href="#icon-star"/></svg></span>
           <span class="stat-number" data-target="15">0</span>
           <span class="stat-label">Years of Excellence</span>
         </div>
         <div class="stat-item reveal from-scale stagger-4">
-          <span class="stat-icon">🤝</span>
+          <span class="stat-icon"><svg class="icon icon-xl" aria-hidden="true"><use href="#icon-users"/></svg></span>
           <span class="stat-number" data-target="3500">0</span>
           <span class="stat-label">Happy Clients</span>
         </div>
@@ -1590,20 +1661,20 @@
             <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80" alt="Ocean Villa" loading="lazy"/>
             <span class="prop-badge">Featured</span>
             <div class="prop-actions">
-              <button class="prop-action-btn" title="Save">♡</button>
-              <button class="prop-action-btn" title="Compare">⇄</button>
-              <button class="prop-action-btn" title="360° View">⊙</button>
+              <button class="prop-action-btn" title="Save"><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></button>
+              <button class="prop-action-btn" title="Compare"><svg class="icon" aria-hidden="true"><use href="#icon-compare"/></svg></button>
+              <button class="prop-action-btn" title="360° View"><svg class="icon" aria-hidden="true"><use href="#icon-view360"/></svg></button>
             </div>
           </div>
           <div class="prop-info">
             <span class="prop-type">Villa</span>
             <div class="prop-name">Azure Ocean Villa</div>
-            <div class="prop-location">Beverly Hills, California</div>
+            <div class="prop-location"><svg class="icon icon-xs" aria-hidden="true"><use href="#icon-pin"/></svg> Beverly Hills, California</div>
           </div>
           <div class="prop-features">
-            <div class="prop-feat"><span class="prop-feat-icon">🛏</span>5 Beds</div>
-            <div class="prop-feat"><span class="prop-feat-icon">🚿</span>4 Baths</div>
-            <div class="prop-feat"><span class="prop-feat-icon">📐</span>6,200 sqft</div>
+            <div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bed"/></svg></span>5 Beds</div>
+            <div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bath"/></svg></span>4 Baths</div>
+            <div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-area"/></svg></span>6,200 sqft</div>
           </div>
           <div class="prop-footer">
             <div class="prop-price">$4,850,000<small>For Sale</small></div>
@@ -1616,20 +1687,20 @@
             <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?w=800&q=80" alt="Modern Penthouse" loading="lazy"/>
             <span class="prop-badge new">New</span>
             <div class="prop-actions">
-              <button class="prop-action-btn">♡</button>
-              <button class="prop-action-btn">⇄</button>
-              <button class="prop-action-btn">⊙</button>
+              <button class="prop-action-btn" title="Save"><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></button>
+              <button class="prop-action-btn" title="Compare"><svg class="icon" aria-hidden="true"><use href="#icon-compare"/></svg></button>
+              <button class="prop-action-btn" title="360° View"><svg class="icon" aria-hidden="true"><use href="#icon-view360"/></svg></button>
             </div>
           </div>
           <div class="prop-info">
             <span class="prop-type">Penthouse</span>
             <div class="prop-name">The Pinnacle Penthouse</div>
-            <div class="prop-location">Manhattan, New York</div>
+            <div class="prop-location"><svg class="icon icon-xs" aria-hidden="true"><use href="#icon-pin"/></svg> Manhattan, New York</div>
           </div>
           <div class="prop-features">
-            <div class="prop-feat"><span class="prop-feat-icon">🛏</span>4 Beds</div>
-            <div class="prop-feat"><span class="prop-feat-icon">🚿</span>3 Baths</div>
-            <div class="prop-feat"><span class="prop-feat-icon">📐</span>4,800 sqft</div>
+            <div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bed"/></svg></span>4 Beds</div>
+            <div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bath"/></svg></span>3 Baths</div>
+            <div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-area"/></svg></span>4,800 sqft</div>
           </div>
           <div class="prop-footer">
             <div class="prop-price">$8,200,000<small>For Sale</small></div>
@@ -1642,20 +1713,20 @@
             <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80" alt="Waterfront Estate" loading="lazy"/>
             <span class="prop-badge rent">For Rent</span>
             <div class="prop-actions">
-              <button class="prop-action-btn">♡</button>
-              <button class="prop-action-btn">⇄</button>
-              <button class="prop-action-btn">⊙</button>
+              <button class="prop-action-btn" title="Save"><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></button>
+              <button class="prop-action-btn" title="Compare"><svg class="icon" aria-hidden="true"><use href="#icon-compare"/></svg></button>
+              <button class="prop-action-btn" title="360° View"><svg class="icon" aria-hidden="true"><use href="#icon-view360"/></svg></button>
             </div>
           </div>
           <div class="prop-info">
             <span class="prop-type">Estate</span>
             <div class="prop-name">Serenity Waterfront Estate</div>
-            <div class="prop-location">Miami Beach, Florida</div>
+            <div class="prop-location"><svg class="icon icon-xs" aria-hidden="true"><use href="#icon-pin"/></svg> Miami Beach, Florida</div>
           </div>
           <div class="prop-features">
-            <div class="prop-feat"><span class="prop-feat-icon">🛏</span>6 Beds</div>
-            <div class="prop-feat"><span class="prop-feat-icon">🚿</span>5 Baths</div>
-            <div class="prop-feat"><span class="prop-feat-icon">📐</span>8,400 sqft</div>
+            <div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bed"/></svg></span>6 Beds</div>
+            <div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bath"/></svg></span>5 Baths</div>
+            <div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-area"/></svg></span>8,400 sqft</div>
           </div>
           <div class="prop-footer">
             <div class="prop-price">$28,000<small>Per Month</small></div>
@@ -1668,20 +1739,20 @@
             <img src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=800&q=80" alt="Mountain Retreat" loading="lazy"/>
             <span class="prop-badge">Featured</span>
             <div class="prop-actions">
-              <button class="prop-action-btn">♡</button>
-              <button class="prop-action-btn">⇄</button>
-              <button class="prop-action-btn">⊙</button>
+              <button class="prop-action-btn" title="Save"><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></button>
+              <button class="prop-action-btn" title="Compare"><svg class="icon" aria-hidden="true"><use href="#icon-compare"/></svg></button>
+              <button class="prop-action-btn" title="360° View"><svg class="icon" aria-hidden="true"><use href="#icon-view360"/></svg></button>
             </div>
           </div>
           <div class="prop-info">
             <span class="prop-type">Chalet</span>
             <div class="prop-name">Alpine Snow Retreat</div>
-            <div class="prop-location">Aspen, Colorado</div>
+            <div class="prop-location"><svg class="icon icon-xs" aria-hidden="true"><use href="#icon-pin"/></svg> Aspen, Colorado</div>
           </div>
           <div class="prop-features">
-            <div class="prop-feat"><span class="prop-feat-icon">🛏</span>7 Beds</div>
-            <div class="prop-feat"><span class="prop-feat-icon">🚿</span>6 Baths</div>
-            <div class="prop-feat"><span class="prop-feat-icon">📐</span>9,100 sqft</div>
+            <div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bed"/></svg></span>7 Beds</div>
+            <div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bath"/></svg></span>6 Baths</div>
+            <div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-area"/></svg></span>9,100 sqft</div>
           </div>
           <div class="prop-footer">
             <div class="prop-price">$12,500,000<small>For Sale</small></div>
@@ -1694,20 +1765,20 @@
             <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80" alt="Garden Manor" loading="lazy"/>
             <span class="prop-badge new">New</span>
             <div class="prop-actions">
-              <button class="prop-action-btn">♡</button>
-              <button class="prop-action-btn">⇄</button>
-              <button class="prop-action-btn">⊙</button>
+              <button class="prop-action-btn" title="Save"><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></button>
+              <button class="prop-action-btn" title="Compare"><svg class="icon" aria-hidden="true"><use href="#icon-compare"/></svg></button>
+              <button class="prop-action-btn" title="360° View"><svg class="icon" aria-hidden="true"><use href="#icon-view360"/></svg></button>
             </div>
           </div>
           <div class="prop-info">
             <span class="prop-type">Manor</span>
             <div class="prop-name">Rosewood Garden Manor</div>
-            <div class="prop-location">Palm Beach, Florida</div>
+            <div class="prop-location"><svg class="icon icon-xs" aria-hidden="true"><use href="#icon-pin"/></svg> Palm Beach, Florida</div>
           </div>
           <div class="prop-features">
-            <div class="prop-feat"><span class="prop-feat-icon">🛏</span>5 Beds</div>
-            <div class="prop-feat"><span class="prop-feat-icon">🚿</span>4 Baths</div>
-            <div class="prop-feat"><span class="prop-feat-icon">📐</span>5,600 sqft</div>
+            <div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bed"/></svg></span>5 Beds</div>
+            <div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bath"/></svg></span>4 Baths</div>
+            <div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-area"/></svg></span>5,600 sqft</div>
           </div>
           <div class="prop-footer">
             <div class="prop-price">$6,750,000<small>For Sale</small></div>
@@ -1720,20 +1791,20 @@
             <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80" alt="Contemporary Villa" loading="lazy"/>
             <span class="prop-badge sold">Sold</span>
             <div class="prop-actions">
-              <button class="prop-action-btn">♡</button>
-              <button class="prop-action-btn">⇄</button>
-              <button class="prop-action-btn">⊙</button>
+              <button class="prop-action-btn" title="Save"><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></button>
+              <button class="prop-action-btn" title="Compare"><svg class="icon" aria-hidden="true"><use href="#icon-compare"/></svg></button>
+              <button class="prop-action-btn" title="360° View"><svg class="icon" aria-hidden="true"><use href="#icon-view360"/></svg></button>
             </div>
           </div>
           <div class="prop-info">
             <span class="prop-type">Villa</span>
             <div class="prop-name">Horizon Contemporary Villa</div>
-            <div class="prop-location">Malibu, California</div>
+            <div class="prop-location"><svg class="icon icon-xs" aria-hidden="true"><use href="#icon-pin"/></svg> Malibu, California</div>
           </div>
           <div class="prop-features">
-            <div class="prop-feat"><span class="prop-feat-icon">🛏</span>4 Beds</div>
-            <div class="prop-feat"><span class="prop-feat-icon">🚿</span>3 Baths</div>
-            <div class="prop-feat"><span class="prop-feat-icon">📐</span>4,200 sqft</div>
+            <div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bed"/></svg></span>4 Beds</div>
+            <div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bath"/></svg></span>3 Baths</div>
+            <div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-area"/></svg></span>4,200 sqft</div>
           </div>
           <div class="prop-footer">
             <div class="prop-price">$9,100,000<small>Sold</small></div>
@@ -1763,21 +1834,21 @@
           <p class="why-text">For over 15 years, Prestige Estates has been the trusted partner for discerning clients seeking unparalleled real estate services. Our expert team combines deep market knowledge with personalized service to deliver exceptional results.</p>
           <div class="why-features">
             <div class="why-feat">
-              <div class="why-feat-icon">🏆</div>
+              <div class="why-feat-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-trophy"/></svg></div>
               <div class="why-feat-content">
                 <h4>Award-Winning Agency</h4>
                 <p>Recognized as the #1 luxury real estate firm three years running by the National Association of Realtors.</p>
               </div>
             </div>
             <div class="why-feat">
-              <div class="why-feat-icon">🌐</div>
+              <div class="why-feat-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-globe"/></svg></div>
               <div class="why-feat-content">
                 <h4>Global Network</h4>
                 <p>Access to an exclusive network spanning 48 markets worldwide, connecting buyers with their perfect properties.</p>
               </div>
             </div>
             <div class="why-feat">
-              <div class="why-feat-icon">🔑</div>
+              <div class="why-feat-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-key"/></svg></div>
               <div class="why-feat-content">
                 <h4>White-Glove Service</h4>
                 <p>Dedicated advisors available 24/7 to guide you through every step of your real estate journey.</p>
@@ -1853,7 +1924,7 @@
       </div>
       <div class="testimonials-grid">
         <div class="testimonial-card reveal stagger-1">
-          <span class="test-stars">★★★★★</span>
+          <span class="test-stars" aria-label="5 out of 5 stars"><svg class="icon icon-filled" aria-hidden="true"><use href="#icon-star"/></svg><svg class="icon icon-filled" aria-hidden="true"><use href="#icon-star"/></svg><svg class="icon icon-filled" aria-hidden="true"><use href="#icon-star"/></svg><svg class="icon icon-filled" aria-hidden="true"><use href="#icon-star"/></svg><svg class="icon icon-filled" aria-hidden="true"><use href="#icon-star"/></svg></span>
           <p class="test-text">"The team at Prestige Estates was exceptional from start to finish. They found us our dream oceanfront villa in under three weeks. Truly a white-glove experience that exceeded every expectation."</p>
           <div class="test-author">
             <img class="test-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&q=80" alt="James M" loading="lazy"/>
@@ -1864,7 +1935,7 @@
           </div>
         </div>
         <div class="testimonial-card reveal stagger-2">
-          <span class="test-stars">★★★★★</span>
+          <span class="test-stars" aria-label="5 out of 5 stars"><svg class="icon icon-filled" aria-hidden="true"><use href="#icon-star"/></svg><svg class="icon icon-filled" aria-hidden="true"><use href="#icon-star"/></svg><svg class="icon icon-filled" aria-hidden="true"><use href="#icon-star"/></svg><svg class="icon icon-filled" aria-hidden="true"><use href="#icon-star"/></svg><svg class="icon icon-filled" aria-hidden="true"><use href="#icon-star"/></svg></span>
           <p class="test-text">"We were initially overwhelmed by the luxury market, but our advisor walked us through every detail with patience and expertise. We couldn't be happier with our new Manhattan penthouse."</p>
           <div class="test-author">
             <img class="test-avatar" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&q=80" alt="Sarah Kline" loading="lazy"/>
@@ -1875,7 +1946,7 @@
           </div>
         </div>
         <div class="testimonial-card reveal stagger-3">
-          <span class="test-stars">★★★★★</span>
+          <span class="test-stars" aria-label="5 out of 5 stars"><svg class="icon icon-filled" aria-hidden="true"><use href="#icon-star"/></svg><svg class="icon icon-filled" aria-hidden="true"><use href="#icon-star"/></svg><svg class="icon icon-filled" aria-hidden="true"><use href="#icon-star"/></svg><svg class="icon icon-filled" aria-hidden="true"><use href="#icon-star"/></svg><svg class="icon icon-filled" aria-hidden="true"><use href="#icon-star"/></svg></span>
           <p class="test-text">"As an international buyer, I needed a team that understood both local markets and global standards. Prestige Estates delivered flawlessly — our Aspen estate is beyond breathtaking."</p>
           <div class="test-author">
             <img class="test-avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&q=80" alt="Michael T" loading="lazy"/>
@@ -1934,10 +2005,10 @@
           <div class="property-img-wrap">
             <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80" alt="" loading="lazy"/>
             <span class="prop-badge">Featured</span>
-            <div class="prop-actions"><button class="prop-action-btn">♡</button><button class="prop-action-btn">⊙</button></div>
+            <div class="prop-actions"><button class="prop-action-btn" title="Save"><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></button><button class="prop-action-btn" title="360° View"><svg class="icon" aria-hidden="true"><use href="#icon-view360"/></svg></button></div>
           </div>
-          <div class="prop-info"><span class="prop-type">Villa</span><div class="prop-name">Azure Ocean Villa</div><div class="prop-location">Beverly Hills, CA</div></div>
-          <div class="prop-features"><div class="prop-feat"><span class="prop-feat-icon">🛏</span>5 Beds</div><div class="prop-feat"><span class="prop-feat-icon">🚿</span>4 Baths</div><div class="prop-feat"><span class="prop-feat-icon">📐</span>6,200 sqft</div></div>
+          <div class="prop-info"><span class="prop-type">Villa</span><div class="prop-name">Azure Ocean Villa</div><div class="prop-location"><svg class="icon icon-xs" aria-hidden="true"><use href="#icon-pin"/></svg> Beverly Hills, CA</div></div>
+          <div class="prop-features"><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bed"/></svg></span>5 Beds</div><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bath"/></svg></span>4 Baths</div><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-area"/></svg></span>6,200 sqft</div></div>
           <div class="prop-footer"><div class="prop-price">$4,850,000<small>For Sale</small></div><a class="prop-link">Details →</a></div>
         </div>
         <!-- Property 2 -->
@@ -1945,10 +2016,10 @@
           <div class="property-img-wrap">
             <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?w=800&q=80" alt="" loading="lazy"/>
             <span class="prop-badge new">New</span>
-            <div class="prop-actions"><button class="prop-action-btn">♡</button><button class="prop-action-btn">⊙</button></div>
+            <div class="prop-actions"><button class="prop-action-btn" title="Save"><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></button><button class="prop-action-btn" title="360° View"><svg class="icon" aria-hidden="true"><use href="#icon-view360"/></svg></button></div>
           </div>
-          <div class="prop-info"><span class="prop-type">Penthouse</span><div class="prop-name">The Pinnacle Penthouse</div><div class="prop-location">Manhattan, NY</div></div>
-          <div class="prop-features"><div class="prop-feat"><span class="prop-feat-icon">🛏</span>4 Beds</div><div class="prop-feat"><span class="prop-feat-icon">🚿</span>3 Baths</div><div class="prop-feat"><span class="prop-feat-icon">📐</span>4,800 sqft</div></div>
+          <div class="prop-info"><span class="prop-type">Penthouse</span><div class="prop-name">The Pinnacle Penthouse</div><div class="prop-location"><svg class="icon icon-xs" aria-hidden="true"><use href="#icon-pin"/></svg> Manhattan, NY</div></div>
+          <div class="prop-features"><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bed"/></svg></span>4 Beds</div><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bath"/></svg></span>3 Baths</div><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-area"/></svg></span>4,800 sqft</div></div>
           <div class="prop-footer"><div class="prop-price">$8,200,000<small>For Sale</small></div><a class="prop-link">Details →</a></div>
         </div>
         <!-- Property 3 -->
@@ -1956,10 +2027,10 @@
           <div class="property-img-wrap">
             <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80" alt="" loading="lazy"/>
             <span class="prop-badge rent">For Rent</span>
-            <div class="prop-actions"><button class="prop-action-btn">♡</button><button class="prop-action-btn">⊙</button></div>
+            <div class="prop-actions"><button class="prop-action-btn" title="Save"><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></button><button class="prop-action-btn" title="360° View"><svg class="icon" aria-hidden="true"><use href="#icon-view360"/></svg></button></div>
           </div>
-          <div class="prop-info"><span class="prop-type">Estate</span><div class="prop-name">Serenity Waterfront Estate</div><div class="prop-location">Miami Beach, FL</div></div>
-          <div class="prop-features"><div class="prop-feat"><span class="prop-feat-icon">🛏</span>6 Beds</div><div class="prop-feat"><span class="prop-feat-icon">🚿</span>5 Baths</div><div class="prop-feat"><span class="prop-feat-icon">📐</span>8,400 sqft</div></div>
+          <div class="prop-info"><span class="prop-type">Estate</span><div class="prop-name">Serenity Waterfront Estate</div><div class="prop-location"><svg class="icon icon-xs" aria-hidden="true"><use href="#icon-pin"/></svg> Miami Beach, FL</div></div>
+          <div class="prop-features"><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bed"/></svg></span>6 Beds</div><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bath"/></svg></span>5 Baths</div><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-area"/></svg></span>8,400 sqft</div></div>
           <div class="prop-footer"><div class="prop-price">$28,000<small>Per Month</small></div><a class="prop-link">Details →</a></div>
         </div>
         <!-- Property 4 -->
@@ -1967,10 +2038,10 @@
           <div class="property-img-wrap">
             <img src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=800&q=80" alt="" loading="lazy"/>
             <span class="prop-badge">Featured</span>
-            <div class="prop-actions"><button class="prop-action-btn">♡</button><button class="prop-action-btn">⊙</button></div>
+            <div class="prop-actions"><button class="prop-action-btn" title="Save"><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></button><button class="prop-action-btn" title="360° View"><svg class="icon" aria-hidden="true"><use href="#icon-view360"/></svg></button></div>
           </div>
-          <div class="prop-info"><span class="prop-type">Chalet</span><div class="prop-name">Alpine Snow Retreat</div><div class="prop-location">Aspen, CO</div></div>
-          <div class="prop-features"><div class="prop-feat"><span class="prop-feat-icon">🛏</span>7 Beds</div><div class="prop-feat"><span class="prop-feat-icon">🚿</span>6 Baths</div><div class="prop-feat"><span class="prop-feat-icon">📐</span>9,100 sqft</div></div>
+          <div class="prop-info"><span class="prop-type">Chalet</span><div class="prop-name">Alpine Snow Retreat</div><div class="prop-location"><svg class="icon icon-xs" aria-hidden="true"><use href="#icon-pin"/></svg> Aspen, CO</div></div>
+          <div class="prop-features"><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bed"/></svg></span>7 Beds</div><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bath"/></svg></span>6 Baths</div><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-area"/></svg></span>9,100 sqft</div></div>
           <div class="prop-footer"><div class="prop-price">$12,500,000<small>For Sale</small></div><a class="prop-link">Details →</a></div>
         </div>
         <!-- Property 5 -->
@@ -1978,10 +2049,10 @@
           <div class="property-img-wrap">
             <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80" alt="" loading="lazy"/>
             <span class="prop-badge new">New</span>
-            <div class="prop-actions"><button class="prop-action-btn">♡</button><button class="prop-action-btn">⊙</button></div>
+            <div class="prop-actions"><button class="prop-action-btn" title="Save"><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></button><button class="prop-action-btn" title="360° View"><svg class="icon" aria-hidden="true"><use href="#icon-view360"/></svg></button></div>
           </div>
-          <div class="prop-info"><span class="prop-type">Manor</span><div class="prop-name">Rosewood Garden Manor</div><div class="prop-location">Palm Beach, FL</div></div>
-          <div class="prop-features"><div class="prop-feat"><span class="prop-feat-icon">🛏</span>5 Beds</div><div class="prop-feat"><span class="prop-feat-icon">🚿</span>4 Baths</div><div class="prop-feat"><span class="prop-feat-icon">📐</span>5,600 sqft</div></div>
+          <div class="prop-info"><span class="prop-type">Manor</span><div class="prop-name">Rosewood Garden Manor</div><div class="prop-location"><svg class="icon icon-xs" aria-hidden="true"><use href="#icon-pin"/></svg> Palm Beach, FL</div></div>
+          <div class="prop-features"><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bed"/></svg></span>5 Beds</div><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bath"/></svg></span>4 Baths</div><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-area"/></svg></span>5,600 sqft</div></div>
           <div class="prop-footer"><div class="prop-price">$6,750,000<small>For Sale</small></div><a class="prop-link">Details →</a></div>
         </div>
         <!-- Property 6 -->
@@ -1989,10 +2060,10 @@
           <div class="property-img-wrap">
             <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80" alt="" loading="lazy"/>
             <span class="prop-badge">Featured</span>
-            <div class="prop-actions"><button class="prop-action-btn">♡</button><button class="prop-action-btn">⊙</button></div>
+            <div class="prop-actions"><button class="prop-action-btn" title="Save"><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></button><button class="prop-action-btn" title="360° View"><svg class="icon" aria-hidden="true"><use href="#icon-view360"/></svg></button></div>
           </div>
-          <div class="prop-info"><span class="prop-type">Villa</span><div class="prop-name">Horizon Contemporary Villa</div><div class="prop-location">Malibu, CA</div></div>
-          <div class="prop-features"><div class="prop-feat"><span class="prop-feat-icon">🛏</span>4 Beds</div><div class="prop-feat"><span class="prop-feat-icon">🚿</span>3 Baths</div><div class="prop-feat"><span class="prop-feat-icon">📐</span>4,200 sqft</div></div>
+          <div class="prop-info"><span class="prop-type">Villa</span><div class="prop-name">Horizon Contemporary Villa</div><div class="prop-location"><svg class="icon icon-xs" aria-hidden="true"><use href="#icon-pin"/></svg> Malibu, CA</div></div>
+          <div class="prop-features"><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bed"/></svg></span>4 Beds</div><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bath"/></svg></span>3 Baths</div><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-area"/></svg></span>4,200 sqft</div></div>
           <div class="prop-footer"><div class="prop-price">$9,100,000<small>For Sale</small></div><a class="prop-link">Details →</a></div>
         </div>
         <!-- Property 7 -->
@@ -2000,10 +2071,10 @@
           <div class="property-img-wrap">
             <img src="https://images.unsplash.com/photo-1560184897-ae75f418493e?w=800&q=80" alt="" loading="lazy"/>
             <span class="prop-badge rent">For Rent</span>
-            <div class="prop-actions"><button class="prop-action-btn">♡</button><button class="prop-action-btn">⊙</button></div>
+            <div class="prop-actions"><button class="prop-action-btn" title="Save"><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></button><button class="prop-action-btn" title="360° View"><svg class="icon" aria-hidden="true"><use href="#icon-view360"/></svg></button></div>
           </div>
-          <div class="prop-info"><span class="prop-type">Mansion</span><div class="prop-name">Grand Colonial Mansion</div><div class="prop-location">Greenwich, CT</div></div>
-          <div class="prop-features"><div class="prop-feat"><span class="prop-feat-icon">🛏</span>8 Beds</div><div class="prop-feat"><span class="prop-feat-icon">🚿</span>7 Baths</div><div class="prop-feat"><span class="prop-feat-icon">📐</span>11,200 sqft</div></div>
+          <div class="prop-info"><span class="prop-type">Mansion</span><div class="prop-name">Grand Colonial Mansion</div><div class="prop-location"><svg class="icon icon-xs" aria-hidden="true"><use href="#icon-pin"/></svg> Greenwich, CT</div></div>
+          <div class="prop-features"><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bed"/></svg></span>8 Beds</div><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bath"/></svg></span>7 Baths</div><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-area"/></svg></span>11,200 sqft</div></div>
           <div class="prop-footer"><div class="prop-price">$45,000<small>Per Month</small></div><a class="prop-link">Details →</a></div>
         </div>
         <!-- Property 8 -->
@@ -2011,10 +2082,10 @@
           <div class="property-img-wrap">
             <img src="https://images.unsplash.com/photo-1416331108676-a22ccb276e35?w=800&q=80" alt="" loading="lazy"/>
             <span class="prop-badge new">New</span>
-            <div class="prop-actions"><button class="prop-action-btn">♡</button><button class="prop-action-btn">⊙</button></div>
+            <div class="prop-actions"><button class="prop-action-btn" title="Save"><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></button><button class="prop-action-btn" title="360° View"><svg class="icon" aria-hidden="true"><use href="#icon-view360"/></svg></button></div>
           </div>
-          <div class="prop-info"><span class="prop-type">Villa</span><div class="prop-name">Sunset Ridge Villa</div><div class="prop-location">Malibu, CA</div></div>
-          <div class="prop-features"><div class="prop-feat"><span class="prop-feat-icon">🛏</span>5 Beds</div><div class="prop-feat"><span class="prop-feat-icon">🚿</span>4 Baths</div><div class="prop-feat"><span class="prop-feat-icon">📐</span>5,800 sqft</div></div>
+          <div class="prop-info"><span class="prop-type">Villa</span><div class="prop-name">Sunset Ridge Villa</div><div class="prop-location"><svg class="icon icon-xs" aria-hidden="true"><use href="#icon-pin"/></svg> Malibu, CA</div></div>
+          <div class="prop-features"><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bed"/></svg></span>5 Beds</div><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bath"/></svg></span>4 Baths</div><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-area"/></svg></span>5,800 sqft</div></div>
           <div class="prop-footer"><div class="prop-price">$7,300,000<small>For Sale</small></div><a class="prop-link">Details →</a></div>
         </div>
         <!-- Property 9 -->
@@ -2022,10 +2093,10 @@
           <div class="property-img-wrap">
             <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80" alt="" loading="lazy"/>
             <span class="prop-badge">Featured</span>
-            <div class="prop-actions"><button class="prop-action-btn">♡</button><button class="prop-action-btn">⊙</button></div>
+            <div class="prop-actions"><button class="prop-action-btn" title="Save"><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></button><button class="prop-action-btn" title="360° View"><svg class="icon" aria-hidden="true"><use href="#icon-view360"/></svg></button></div>
           </div>
-          <div class="prop-info"><span class="prop-type">Penthouse</span><div class="prop-name">Skyline Luxury Penthouse</div><div class="prop-location">Chicago, IL</div></div>
-          <div class="prop-features"><div class="prop-feat"><span class="prop-feat-icon">🛏</span>3 Beds</div><div class="prop-feat"><span class="prop-feat-icon">🚿</span>3 Baths</div><div class="prop-feat"><span class="prop-feat-icon">📐</span>3,600 sqft</div></div>
+          <div class="prop-info"><span class="prop-type">Penthouse</span><div class="prop-name">Skyline Luxury Penthouse</div><div class="prop-location"><svg class="icon icon-xs" aria-hidden="true"><use href="#icon-pin"/></svg> Chicago, IL</div></div>
+          <div class="prop-features"><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bed"/></svg></span>3 Beds</div><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bath"/></svg></span>3 Baths</div><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-area"/></svg></span>3,600 sqft</div></div>
           <div class="prop-footer"><div class="prop-price">$3,200,000<small>For Sale</small></div><a class="prop-link">Details →</a></div>
         </div>
         <!-- Property 10 -->
@@ -2033,10 +2104,10 @@
           <div class="property-img-wrap">
             <img src="https://images.unsplash.com/photo-1565182999561-18d7dc61c393?w=800&q=80" alt="" loading="lazy"/>
             <span class="prop-badge rent">For Rent</span>
-            <div class="prop-actions"><button class="prop-action-btn">♡</button><button class="prop-action-btn">⊙</button></div>
+            <div class="prop-actions"><button class="prop-action-btn" title="Save"><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></button><button class="prop-action-btn" title="360° View"><svg class="icon" aria-hidden="true"><use href="#icon-view360"/></svg></button></div>
           </div>
-          <div class="prop-info"><span class="prop-type">Estate</span><div class="prop-name">Vineyard Estate</div><div class="prop-location">Napa Valley, CA</div></div>
-          <div class="prop-features"><div class="prop-feat"><span class="prop-feat-icon">🛏</span>6 Beds</div><div class="prop-feat"><span class="prop-feat-icon">🚿</span>5 Baths</div><div class="prop-feat"><span class="prop-feat-icon">📐</span>7,800 sqft</div></div>
+          <div class="prop-info"><span class="prop-type">Estate</span><div class="prop-name">Vineyard Estate</div><div class="prop-location"><svg class="icon icon-xs" aria-hidden="true"><use href="#icon-pin"/></svg> Napa Valley, CA</div></div>
+          <div class="prop-features"><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bed"/></svg></span>6 Beds</div><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bath"/></svg></span>5 Baths</div><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-area"/></svg></span>7,800 sqft</div></div>
           <div class="prop-footer"><div class="prop-price">$35,000<small>Per Month</small></div><a class="prop-link">Details →</a></div>
         </div>
         <!-- Property 11 -->
@@ -2044,10 +2115,10 @@
           <div class="property-img-wrap">
             <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471?w=800&q=80" alt="" loading="lazy"/>
             <span class="prop-badge new">New</span>
-            <div class="prop-actions"><button class="prop-action-btn">♡</button><button class="prop-action-btn">⊙</button></div>
+            <div class="prop-actions"><button class="prop-action-btn" title="Save"><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></button><button class="prop-action-btn" title="360° View"><svg class="icon" aria-hidden="true"><use href="#icon-view360"/></svg></button></div>
           </div>
-          <div class="prop-info"><span class="prop-type">Mansion</span><div class="prop-name">Heritage Hilltop Mansion</div><div class="prop-location">Beverly Hills, CA</div></div>
-          <div class="prop-features"><div class="prop-feat"><span class="prop-feat-icon">🛏</span>9 Beds</div><div class="prop-feat"><span class="prop-feat-icon">🚿</span>8 Baths</div><div class="prop-feat"><span class="prop-feat-icon">📐</span>14,500 sqft</div></div>
+          <div class="prop-info"><span class="prop-type">Mansion</span><div class="prop-name">Heritage Hilltop Mansion</div><div class="prop-location"><svg class="icon icon-xs" aria-hidden="true"><use href="#icon-pin"/></svg> Beverly Hills, CA</div></div>
+          <div class="prop-features"><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bed"/></svg></span>9 Beds</div><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bath"/></svg></span>8 Baths</div><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-area"/></svg></span>14,500 sqft</div></div>
           <div class="prop-footer"><div class="prop-price">$24,900,000<small>For Sale</small></div><a class="prop-link">Details →</a></div>
         </div>
         <!-- Property 12 -->
@@ -2055,10 +2126,10 @@
           <div class="property-img-wrap">
             <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?w=800&q=80" alt="" loading="lazy"/>
             <span class="prop-badge">Featured</span>
-            <div class="prop-actions"><button class="prop-action-btn">♡</button><button class="prop-action-btn">⊙</button></div>
+            <div class="prop-actions"><button class="prop-action-btn" title="Save"><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></button><button class="prop-action-btn" title="360° View"><svg class="icon" aria-hidden="true"><use href="#icon-view360"/></svg></button></div>
           </div>
-          <div class="prop-info"><span class="prop-type">Chalet</span><div class="prop-name">Glacier Peak Chalet</div><div class="prop-location">Vail, CO</div></div>
-          <div class="prop-features"><div class="prop-feat"><span class="prop-feat-icon">🛏</span>5 Beds</div><div class="prop-feat"><span class="prop-feat-icon">🚿</span>4 Baths</div><div class="prop-feat"><span class="prop-feat-icon">📐</span>6,500 sqft</div></div>
+          <div class="prop-info"><span class="prop-type">Chalet</span><div class="prop-name">Glacier Peak Chalet</div><div class="prop-location"><svg class="icon icon-xs" aria-hidden="true"><use href="#icon-pin"/></svg> Vail, CO</div></div>
+          <div class="prop-features"><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bed"/></svg></span>5 Beds</div><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bath"/></svg></span>4 Baths</div><div class="prop-feat"><span class="prop-feat-icon"><svg class="icon" aria-hidden="true"><use href="#icon-area"/></svg></span>6,500 sqft</div></div>
           <div class="prop-footer"><div class="prop-price">$8,750,000<small>For Sale</small></div><a class="prop-link">Details →</a></div>
         </div>
       </div>
@@ -2110,22 +2181,22 @@
       </div>
       <div class="values-grid">
         <div class="value-card reveal stagger-1">
-          <span class="value-icon">💎</span>
+          <span class="value-icon"><svg class="icon icon-lg" aria-hidden="true"><use href="#icon-diamond"/></svg></span>
           <div class="value-title">Integrity</div>
           <p class="value-text">We operate with unwavering transparency and honesty in every transaction, building relationships based on trust and mutual respect.</p>
         </div>
         <div class="value-card reveal stagger-2">
-          <span class="value-icon">🏆</span>
+          <span class="value-icon"><svg class="icon icon-lg" aria-hidden="true"><use href="#icon-trophy"/></svg></span>
           <div class="value-title">Excellence</div>
           <p class="value-text">We pursue perfection in everything we do — from the properties we select to the service we provide. Good enough is never enough.</p>
         </div>
         <div class="value-card reveal stagger-3">
-          <span class="value-icon">🤝</span>
+          <span class="value-icon"><svg class="icon icon-lg" aria-hidden="true"><use href="#icon-users"/></svg></span>
           <div class="value-title">Partnership</div>
           <p class="value-text">We view every client relationship as a long-term partnership, investing in your success as if it were our own family's future.</p>
         </div>
         <div class="value-card reveal stagger-4">
-          <span class="value-icon">🌟</span>
+          <span class="value-icon"><svg class="icon icon-lg" aria-hidden="true"><use href="#icon-sparkle"/></svg></span>
           <div class="value-title">Innovation</div>
           <p class="value-text">We embrace technology and creative thinking to deliver market insights and experiences that consistently exceed expectations.</p>
         </div>
@@ -2284,7 +2355,7 @@
       <div class="services-grid">
         <div class="service-card reveal stagger-1">
           <span class="service-number">01</span>
-          <span class="service-icon">🏡</span>
+          <span class="service-icon"><svg class="icon icon-lg" aria-hidden="true"><use href="#icon-home"/></svg></span>
           <div class="service-title">Property Sales</div>
           <p class="service-text">Our sales specialists leverage deep market knowledge and an extensive network to achieve maximum value for your luxury property in the shortest possible time.</p>
           <ul class="service-list">
@@ -2296,7 +2367,7 @@
         </div>
         <div class="service-card reveal stagger-2">
           <span class="service-number">02</span>
-          <span class="service-icon">🔑</span>
+          <span class="service-icon"><svg class="icon icon-lg" aria-hidden="true"><use href="#icon-key"/></svg></span>
           <div class="service-title">Buyer Representation</div>
           <p class="service-text">We advocate exclusively for buyers, providing access to off-market listings and ensuring every decision is made with complete information and confidence.</p>
           <ul class="service-list">
@@ -2308,7 +2379,7 @@
         </div>
         <div class="service-card reveal stagger-3">
           <span class="service-number">03</span>
-          <span class="service-icon">📋</span>
+          <span class="service-icon"><svg class="icon icon-lg" aria-hidden="true"><use href="#icon-clipboard"/></svg></span>
           <div class="service-title">Property Management</div>
           <p class="service-text">Our comprehensive management service ensures your investment property is maintained to the highest standards while generating optimal returns.</p>
           <ul class="service-list">
@@ -2320,7 +2391,7 @@
         </div>
         <div class="service-card reveal stagger-1">
           <span class="service-number">04</span>
-          <span class="service-icon">📈</span>
+          <span class="service-icon"><svg class="icon icon-lg" aria-hidden="true"><use href="#icon-trending"/></svg></span>
           <div class="service-title">Investment Advisory</div>
           <p class="service-text">Our investment team provides sophisticated analysis and strategic guidance to help you build and optimize a high-performing real estate portfolio.</p>
           <ul class="service-list">
@@ -2332,7 +2403,7 @@
         </div>
         <div class="service-card reveal stagger-2">
           <span class="service-number">05</span>
-          <span class="service-icon">🌍</span>
+          <span class="service-icon"><svg class="icon icon-lg" aria-hidden="true"><use href="#icon-globe"/></svg></span>
           <div class="service-title">Global Relocation</div>
           <p class="service-text">Seamlessly transition your life across borders with our full-service relocation program, handling every detail from property search to school placement.</p>
           <ul class="service-list">
@@ -2344,7 +2415,7 @@
         </div>
         <div class="service-card reveal stagger-3">
           <span class="service-number">06</span>
-          <span class="service-icon">🎨</span>
+          <span class="service-icon"><svg class="icon icon-lg" aria-hidden="true"><use href="#icon-palette"/></svg></span>
           <div class="service-title">Interior Design</div>
           <p class="service-text">Our curated network of world-class interior designers and architects can transform your new property into a bespoke masterpiece that reflects your vision.</p>
           <ul class="service-list">
@@ -2425,28 +2496,28 @@
         <p class="contact-text">Whether you're looking to buy, sell, or invest, our dedicated team of experts is ready to guide you through every step of your luxury real estate journey.</p>
         <div class="contact-items">
           <div class="contact-item">
-            <div class="contact-item-icon">📍</div>
+            <div class="contact-item-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-pin"/></svg></div>
             <div>
               <span class="contact-item-label">Our Office</span>
               <span class="contact-item-value">9200 Sunset Blvd, Suite 1200<br>Beverly Hills, CA 90210</span>
             </div>
           </div>
           <div class="contact-item">
-            <div class="contact-item-icon">📞</div>
+            <div class="contact-item-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-phone"/></svg></div>
             <div>
               <span class="contact-item-label">Phone</span>
               <span class="contact-item-value">+1 (310) 555-0190</span>
             </div>
           </div>
           <div class="contact-item">
-            <div class="contact-item-icon">✉</div>
+            <div class="contact-item-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-mail"/></svg></div>
             <div>
               <span class="contact-item-label">Email</span>
               <span class="contact-item-value">hello@prestigeestates.com</span>
             </div>
           </div>
           <div class="contact-item">
-            <div class="contact-item-icon">🕐</div>
+            <div class="contact-item-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-clock"/></svg></div>
             <div>
               <span class="contact-item-label">Hours</span>
               <span class="contact-item-value">Mon–Fri: 9AM–7PM<br>Sat–Sun: 10AM–5PM</span>
@@ -2520,7 +2591,7 @@
       <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1920&q=80" alt="Map" loading="lazy"/>
       <div class="map-overlay">
         <div class="map-pin">
-          📍 &nbsp;Prestige Estates HQ — Beverly Hills, CA
+          <svg class="icon" aria-hidden="true"><use href="#icon-pin"/></svg> Prestige Estates HQ — Beverly Hills, CA
         </div>
       </div>
     </div>
